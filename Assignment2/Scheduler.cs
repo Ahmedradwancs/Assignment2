@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,9 @@ namespace Assignment2
 {
     internal class Scheduler
     {
-        // Create a method that calculates the weekends to work
+        /// <summary>
+        /// When the user selects the  weekends option from the main menu, this method is called.
+        /// </summary>
         public void weekEnds()
         {
             for (int week = 2; week <= 52; week += 8)
@@ -22,7 +24,9 @@ namespace Assignment2
             }
         }
 
-        // Create a method that calculates the night shifts to work
+        /// <summary>
+        /// When the user selects the nightshifts option from the main menu, this method is called.
+        /// </summary>
         public void nightShifts()
         {
             for (int week = 1; week <= 52; week += 16)
@@ -36,7 +40,9 @@ namespace Assignment2
 
         }
 
-        // Create a method that displays the menu
+        /// <summary>
+        /// When the user selects the main menu option from the main menu, this method is called.
+        /// </summary>
         public void displayMenu()
         {
             Console.WriteLine("---------------------------------------------------");
@@ -48,28 +54,38 @@ namespace Assignment2
             Console.WriteLine("0 Exit the program.");
         }
 
-        // Create a method that starts the program
+        /// <summary>
+        /// When the user selects the start option from the main menu, this method is called.
+        /// </summary>
         public void start()
         {
-            int choice = 0;
+            string choice = "0";
             do
             {
                 displayMenu();
                 Console.WriteLine();
                 Console.Write("Your choice: ");
-                choice = int.Parse(Console.ReadLine());
+                choice = Console.ReadLine();
                 // Create a switch statement to call the methods
                 switch (choice)
                 {
-                    case 1:
+                    case "1":
                         weekEnds();
                         break;
 
-                    case 2:
+                    case "2":
                         nightShifts();
                         break;
+
+                    case "0":
+                        Console.WriteLine("Exiting the program.");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice, please try again");
+                        break;
                 }
-            } while (choice != 0);
+            } while (choice != "0");
 
         }
     }
