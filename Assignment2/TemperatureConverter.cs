@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,11 @@ namespace Assignment2
 {
     internal class TemperatureConverter
     {
-        // Create a method that converts Fahrenheit to Celsius
+        /// <summary>
+        /// This method converts Fahrenheit to Celsius
+        /// </summary>
+        /// <param name="fahrenheit"></param>
+        /// <returns></returns>
         public static double ConvertFahrenheitToCelsius(int fahrenheit)
         {
             // Formula for Fahrenheit to Celsius conversion
@@ -16,7 +20,11 @@ namespace Assignment2
             return celsius;
         }
 
-        // Create a method that converts Celsius to Fahrenheit
+        /// <summary>
+        /// This method converts Celsius to Fahrenheit
+        /// </summary>
+        /// <param name="celsius"></param>
+        /// <returns></returns>
         public static double ConvertCelsiusToFahrenheit(int celsius)
         {
             // Formula for Celsius to Fahrenheit conversion
@@ -24,8 +32,12 @@ namespace Assignment2
             return fahrenheit;
         }
 
+        /// <summary>
+        /// This method displays the main menu
+        /// </summary>
         public void DisplayMenu()
         {
+            Console.WriteLine();
             Console.WriteLine("******************************************");
             Console.WriteLine("                 Main Menu                ");
             Console.WriteLine("******************************************");
@@ -36,18 +48,20 @@ namespace Assignment2
             Console.WriteLine();
         }
 
-        // Create a method that starts the program
+        /// <summary>
+        /// This method starts the temperature converter
+        /// </summary>
         public void Start()
         {
-            int choice = 0;
+            string choice = "0";
             do
             {
                 DisplayMenu();
                 Console.Write("Enter your choice: ");
-                choice = int.Parse(Console.ReadLine());
+                choice = Console.ReadLine();
                 switch (choice)
                 {
-                    case 1:
+                    case "1":
                         for (int i = 0; i <= 212; i += 10)
                         {
                             Console.WriteLine($"{i,6:F2} F = {ConvertFahrenheitToCelsius(i),6:F2} C");
@@ -55,14 +69,14 @@ namespace Assignment2
 
                         break;
 
-                    case 2:
+                    case "2":
                         for (int i = 0; i <= 100; i += 5)
                         {
                             Console.WriteLine($"{i,6:F2} C = {ConvertCelsiusToFahrenheit(i),6:F2} F");
                         }
                         break;
 
-                    case 0:
+                    case "0":
                         Console.WriteLine("Exiting the converter.");
                         break;
 
@@ -70,8 +84,9 @@ namespace Assignment2
                         Console.WriteLine("Invalid choice, please try again");
                         break;
                 }
-            } while (choice != 0);
-            
+            } while (choice != "0");
+            Console.WriteLine();
+
         }
 
 
