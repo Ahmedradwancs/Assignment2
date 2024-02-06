@@ -1,11 +1,15 @@
-﻿namespace Assignment2
+namespace Assignment2
 {
     internal class Program
     {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             
-             
+             //Clear the console and set the title
             Console.Clear();
             Console.Title = "Assignment 2 <By: Ahmed Radwan";
 
