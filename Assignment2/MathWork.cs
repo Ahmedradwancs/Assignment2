@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +8,19 @@ namespace Assignment2
 {
     internal class MathWork
     {
-        //Create the class method that calls other methods
+        /// <summary>
+        /// When the user selects the MathWork option from the main menu, this method is called.
+        /// </summary>
         public void Calculate()
         {
             Console.WriteLine();
             Console.WriteLine("Sum numbers between any two numbers");
             Console.Write("Give number1 number: ");
-            int num1 = int.Parse(Console.ReadLine());
+            //int num1 = int.Parse(Console.ReadLine());
+            int num1 = Input.ReadIntegerConsole("Give number1 number: ");
             Console.Write("Give end number: ");
-            int num2 = int.Parse(Console.ReadLine());
+            //int num2 = int.Parse(Console.ReadLine());
+            int num2 = Input.ReadIntegerConsole("Give end number: ");
             if (num1 > num2)
             {
                 int temp = num1;
@@ -40,7 +44,12 @@ namespace Assignment2
         }
 
 
-        //Create the method that adds the values from a start number to an end number
+        /// <summary>
+        /// Will sum all numbers between two numbers
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
         private int SumNumbers(int start, int end)
         {
             int sum = 0;
@@ -51,7 +60,11 @@ namespace Assignment2
             return sum;
         }
 
-        //Create the method that prints the even numbers from a start number to an end number
+        /// <summary>
+        /// Will print all even numbers between two numbers
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
         private void PrintEvenNumbers(int start, int end)
         {
             Console.WriteLine("****Even numbers between " + start + " och " + end);
@@ -66,7 +79,11 @@ namespace Assignment2
             Console.WriteLine();
         }
 
-        //Create the method that prints the odd numbers from a start number to an end number
+        /// <summary>
+        /// Will print all odd numbers between two numbers
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
         private void PrintOddNumbers(int start, int end)
         {
             Console.WriteLine("****Odd numbers between " + start + " och " + end);
@@ -75,20 +92,24 @@ namespace Assignment2
             {
                 if (i % 2 != 0)
                 {
-                    Console.WriteLine("\t" + i);
+                    Console.Write("\t" + i);
                 }
             }
             Console.WriteLine();
         }
 
-        //Create the method that calculates the square root of all numbers between two numbers
+        /// <summary>
+        /// Will calculate the square roots of all numbers between two numbers
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
         private void calculateSquareRoots(int start, int end)
 
         {
             Console.WriteLine("       ***********  Square Roots  ***********");
             for (int i = start; i <= end; i++)
             {
-                Console.Write($"Sqrt ({i} to {end}  )");
+                Console.Write($"Sqrt({i, 3} to {end} )");
                 for (int j = i; j <= end; j++)
                 {
                     Console.Write($"{Math.Sqrt(j), 6:F2}");
@@ -98,8 +119,14 @@ namespace Assignment2
 
         }
 
+        /// <summary>
+        /// Will ask the user if he/she wants to exit the program
+        /// </summary>
+        /// <returns></returns>
         private bool ExitCalculation()
         {
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Exit math work? (y/n)");
             string answer = Console.ReadLine();
             if (answer.ToLower() == "y")
