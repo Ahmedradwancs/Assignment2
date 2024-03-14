@@ -12,7 +12,7 @@ namespace Assignment2
         /// When the user selects the StringFunctions option from the main menu, this method is called.
         /// </summary>
         /// <param name="input"></param>
-        public void StringLength(string input)
+        private void StringLength(string input)
         {
             int length = input.Length;
             Console.WriteLine(" ----- STRENGTH LENGTH ----- ");
@@ -25,7 +25,7 @@ namespace Assignment2
         /// <summary>
         /// This method predicts the user's day based on the number he/she selects.
         /// </summary>
-        public void PredictMyDay()
+        private void PredictMyDay()
         {
             Console.WriteLine();
             Console.WriteLine("********** The Fortune Teller **********");
@@ -73,7 +73,7 @@ namespace Assignment2
         /// <summary>
         /// This method asks the user if he/she wants to continue with another round.
         /// </summary>
-        public void RunAgain()
+        private void RunAgain()
         {
             Console.Write("Continue with another round? (y/n): ");
             string answer = Console.ReadLine();
