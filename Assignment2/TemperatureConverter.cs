@@ -13,7 +13,7 @@ namespace Assignment2
         /// </summary>
         /// <param name="fahrenheit"></param>
         /// <returns></returns>
-        public static double ConvertFahrenheitToCelsius(int fahrenheit)
+        private static double ConvertFahrenheitToCelsius(int fahrenheit)
         {
             // Formula for Fahrenheit to Celsius conversion
             double celsius = ((fahrenheit - 32) * 5.0) / 9.0;
@@ -25,7 +25,7 @@ namespace Assignment2
         /// </summary>
         /// <param name="celsius"></param>
         /// <returns></returns>
-        public static double ConvertCelsiusToFahrenheit(int celsius)
+        private static double ConvertCelsiusToFahrenheit(int celsius)
         {
             // Formula for Celsius to Fahrenheit conversion
             double fahrenheit = ((celsius * 9.0) / 5.0) + 32;
@@ -35,7 +35,7 @@ namespace Assignment2
         /// <summary>
         /// This method displays the main menu
         /// </summary>
-        public void DisplayMenu()
+        private void DisplayMenu()
         {
             Console.WriteLine();
             Console.WriteLine("******************************************");
