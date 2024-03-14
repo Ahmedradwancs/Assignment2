@@ -11,7 +11,7 @@ namespace Assignment2
         /// <summary>
         /// When the user selects the  weekends option from the main menu, this method is called.
         /// </summary>
-        public void weekEnds()
+        private void weekEnds()
         {
             for (int week = 2; week <= 52; week += 8)
             {
@@ -27,7 +27,7 @@ namespace Assignment2
         /// <summary>
         /// When the user selects the nightshifts option from the main menu, this method is called.
         /// </summary>
-        public void nightShifts()
+        private void nightShifts()
         {
             for (int week = 1; week <= 52; week += 16)
             {
@@ -43,7 +43,7 @@ namespace Assignment2
         /// <summary>
         /// When the user selects the main menu option from the main menu, this method is called.
         /// </summary>
-        public void displayMenu()
+        private void displayMenu()
         {
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine("               YOUR WORK SCHEDULE                  ");
